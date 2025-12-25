@@ -1,0 +1,100 @@
+Relationships:-
+------------------
+
+Region (parent) --> countries (child)
+   
+Countries (parent) --> locations (child)
+
+Locations (parent) --> departments (child)
+
+Departments (parent) --> employees, job_history (child)
+
+Employees (parent) --> job_history (child)
+
+Jobs (parent) --> employees, job_history (child)
+
+Perfect! Let’s break down your relationships step by step so you can visualize the hierarchy clearly. I’ll also mention the type of relationships (1:1, 1:M, M:M) for clarity.
+
+1. Region → Countries
+
+Parent: Region
+
+Child: Countries
+
+Relationship: 1 Region → Many Countries (1:M)
+
+Reason: A single region can have multiple countries.
+
+2. Countries → Locations
+
+Parent: Countries
+
+Child: Locations
+
+Relationship: 1 Country → Many Locations (1:M)
+
+Reason: Each country can have multiple office locations.
+
+3. Locations → Departments
+
+Parent: Locations
+
+Child: Departments
+
+Relationship: 1 Location → Many Departments (1:M)
+
+Reason: Each office location can host multiple departments.
+
+4. Departments → Employees, Job_History
+
+Parent: Departments
+
+Child: Employees, Job_History
+
+Relationship:
+
+Departments → Employees: 1 Department → Many Employees (1:M)
+
+Departments → Job_History: 1 Department → Many Job History records (1:M)
+
+Reason: Employees belong to a department; job changes are tracked per department.
+
+5. Employees → Job_History
+
+Parent: Employees
+
+Child: Job_History
+
+Relationship: 1 Employee → Many Job_History records (1:M)
+
+Reason: Each employee can have multiple past job records.
+
+6. Jobs → Employees, Job_History
+
+Parent: Jobs
+
+Child: Employees, Job_History
+
+Relationship:
+
+Jobs → Employees: 1 Job → Many Employees (1:M)
+
+Jobs → Job_History: 1 Job → Many Job History records (1:M)
+
+Reason: Many employees can have the same job, and job history tracks this over time.
+
+✅ Summary:
+
+The hierarchy looks like this:
+
+Region
+ └─ Countries
+      └─ Locations
+           └─ Departments
+                ├─ Employees
+                │    └─ Job_History
+                └─ Job_History
+Jobs ──────────┘
+
+
+If you want, I can draw an ER diagram for you showing all parent-child relationships with PK-FK links, so it’s visually easier to understand.
